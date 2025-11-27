@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💳</text></svg>" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dressfy Quiz</title>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "@vercel/node": "https://aistudiocdn.com/@vercel/node@^5.5.8",
+    "recurly": "https://aistudiocdn.com/recurly@^4.40.0"
+  }
+}
+</script>
+  <!-- Recurly.js via CDN (carregado antes do React para garantir disponibilidade) -->
+  <link href="https://js.recurly.com/v4/recurly.css" rel="stylesheet" type="text/css">
+  <script src="https://js.recurly.com/v4/recurly.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@800&family=Playfair+Display:wght@700&family=Sen:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      @keyframes fadeInOut {
+          0%, 100% {
+              opacity: 0;
+          }
+          8.33%, 25% {
+              opacity: 1;
+          }
+          33.33% {
+              opacity: 0;
+          }
+      }
+      .phrase {
+          position: absolute;
+          opacity: 0;
+          animation: fadeInOut 9s infinite;
+          padding: 0 10px;
+          width: 100%;
+          text-align: center;
+          left: 0;
+      }
+      .phrase:nth-child(1) {
+        animation-delay: 0s;
+      }
+      .phrase:nth-child(2) {
+        animation-delay: 3s;
+      }
+      .phrase:nth-child(3) {
+        animation-delay: 6s;
+      }
+    </style>
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/index.tsx"></script>
+  </body>
+</html>
