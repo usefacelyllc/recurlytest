@@ -615,6 +615,20 @@ const CheckoutForm = ({ onSuccess, planCode, priceAmount }: { onSuccess: (accoun
                 Google Pay
               </button>
             )}
+            
+            {isApplePayAvailable && (
+              <button
+                type="button"
+                onClick={() => applePayInstanceRef.current?.begin()}
+                disabled={isLoading || is3DSProcessing}
+                className="flex-1 min-w-[140px] bg-black text-white py-3 px-4 rounded-xl font-sen font-bold shadow-md border border-black transition-all duration-300 hover:bg-gray-800 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+              >
+                <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M15.259 13.9c-.066-2.608 2.128-3.86 2.225-3.916-.013-.043-0.038-.137-0.081-.225-0.354-0.73-0.902-1.373-1.637-1.385-0.697-0.012-1.189 0.41-1.493 0.41-0.33 0-0.873-0.398-1.439-0.386-0.737 0.013-1.42 0.429-1.802 1.093-0.77 1.334-0.197 3.309 0.553 4.39 0.367 0.528 0.793 1.11 1.353 1.089 0.53-0.021 0.73-0.342 1.372-0.342 0.632 0 0.812 0.342 1.362 0.332 0.563-0.011 0.919-0.51 1.264-1.014 0.398-0.578 0.562-1.138 0.572-1.167-0.012-0.006-1.109-0.425-1.12-1.688zM14.223 8.35c0.312-0.378 0.522-0.903 0.465-1.426-0.45 0.018-0.993 0.3-1.316 0.677-0.287 0.332-0.539 0.865-0.471 1.376 0.503 0.039 1.011-0.24 1.322-0.627z"/>
+                </svg>
+                Apple Pay
+              </button>
+            )}
           </div>
           
           {/* Divisor */}
