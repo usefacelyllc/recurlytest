@@ -32,7 +32,7 @@ const CheckpointPage: React.FC<CheckpointPageProps> = ({ onContinue }) => {
       <div className="relative z-10 flex flex-col h-full">
         {/* Text content positioned at the top */}
         <div className="flex-grow flex flex-col items-center justify-start text-center pt-16">
-          <h1 className="font-playfair text-4xl sm:text-5xl font-bold mb-4">
+          <h1 className="font-docade text-4xl sm:text-5xl font-bold mb-4">
             No estás sola
           </h1>
           <p className="text-base sm:text-lg font-bold tracking-wider uppercase max-w-xs">

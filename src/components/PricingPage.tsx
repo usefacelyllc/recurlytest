@@ -77,7 +77,7 @@ const PricingPage: React.FC<PricingPageProps> = ({ onContinue }) => {
         </header>
 
         <section className="text-center">
-          <h1 className="font-playfair text-4xl font-bold mb-4">Elige un precio de prueba</h1>
+          <h1 className="font-docade text-4xl font-bold mb-4">Elige un precio de prueba</h1>
           
           <div className="mb-6">
             <h2 className="text-2xl font-bold mb-2">TU SATISFACCIÓN NOS IMPORTA</h2>
@@ -134,7 +134,7 @@ const PricingPage: React.FC<PricingPageProps> = ({ onContinue }) => {
                 </div>
               </div>
               <div>
-                <h2 className="font-playfair text-xl font-bold mb-2 text-gray-900">
+                <h2 className="font-docade text-xl font-bold mb-2 text-gray-900">
                   Garantía de reembolso de 30 días
                 </h2>
                 <p className="text-sm text-gray-600 leading-relaxed">
@@ -209,7 +209,7 @@ const PricingPage: React.FC<PricingPageProps> = ({ onContinue }) => {
             
             {/* Header */}
             <div className="flex items-center justify-between p-4 border-b border-gray-100 bg-white z-10">
-              <h3 className="font-playfair font-bold text-lg ml-2">Política de Reembolso</h3>
+              <h3 className="font-docade font-bold text-lg ml-2">Política de Reembolso</h3>
               <button 
                 onClick={() => setIsPolicyOpen(false)}
                 className="p-2 rounded-full bg-gray-100 text-gray-600 hover:bg-gray-200 transition-colors focus:outline-none"

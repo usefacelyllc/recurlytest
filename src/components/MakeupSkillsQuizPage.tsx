@@ -41,8 +41,8 @@ const MakeupSkillsQuizPage: React.FC<MakeupSkillsQuizPageProps> = ({ onBack, onC
           <button onClick={onBack} className="text-3xl p-2 -ml-2 hover:opacity-75 transition-opacity" aria-label="Voltar">
             &lt;
           </button>
-          <img 
-            src="/assets/logo-dressfy.webp" 
+          <img
+            src="/assets/logo-dressfy.webp"
             alt="Dressfy Logo"
             className="h-6"
           />
@@ -54,7 +54,7 @@ const MakeupSkillsQuizPage: React.FC<MakeupSkillsQuizPageProps> = ({ onBack, onC
 
         {/* Main Content */}
         <div className="text-left">
-          <h1 className="text-3xl font-playfair font-bold mb-6 leading-tight">
+          <h1 className="text-3xl font-docade font-bold mb-6 leading-tight">
             ¿Cuáles son tus habilidades en maquillaje?
           </h1>
 
@@ -64,11 +64,10 @@ const MakeupSkillsQuizPage: React.FC<MakeupSkillsQuizPageProps> = ({ onBack, onC
               return (
                 <button
                   key={level}
-                  className={`w-full text-left p-4 border rounded-xl text-lg font-sen transition-all duration-300 transform focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-complementar focus:ring-principal ${
-                    isSelected
-                      ? 'bg-principal text-complementar border-principal scale-105 shadow-md'
-                      : 'bg-complementar border-secundaria text-apoio hover:border-principal'
-                  }`}
+                  className={`w-full text-left p-4 border rounded-xl text-lg font-sen transition-all duration-300 transform focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-complementar focus:ring-principal ${isSelected
+                      ? 'bg-gray-50 border-apoio border-2 text-apoio font-bold shadow-md scale-[1.02]'
+                      : 'bg-white border-gray-200 text-gray-700 hover:border-gray-300'
+                    }`}
                   onClick={() => handleSelection(level)}
                 >
                   {level}
@@ -78,15 +77,15 @@ const MakeupSkillsQuizPage: React.FC<MakeupSkillsQuizPageProps> = ({ onBack, onC
           </div>
 
           {/* Conditional Description Text */}
-           <div className="mt-8 relative min-h-[6rem]" ref={descriptionRef}>
+          <div className="mt-8 relative min-h-[6rem]" ref={descriptionRef}>
             {skills.map(({ level, description }) => (
-              <div 
+              <div
                 key={level}
                 className={`absolute top-0 left-0 transition-opacity duration-300 ease-in-out w-full ${selectedOption === level ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
               >
-                  <p className="text-base leading-relaxed text-gray-600">
-                      {description}
-                  </p>
+                <p className="text-base leading-relaxed text-gray-600">
+                  {description}
+                </p>
               </div>
             ))}
           </div>
@@ -97,13 +96,13 @@ const MakeupSkillsQuizPage: React.FC<MakeupSkillsQuizPageProps> = ({ onBack, onC
       {/* Sticky Footer Button */}
       <div className="fixed bottom-0 left-0 right-0 bg-complementar p-4 border-t border-secundaria">
         <div className="max-w-sm mx-auto">
-            <button 
-              onClick={onContinue}
-              disabled={!selectedOption}
-              className="w-full bg-apoio text-complementar py-4 px-6 rounded-xl text-lg font-sen font-bold shadow-md transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-complementar focus:ring-apoio disabled:bg-gray-300 disabled:shadow-none disabled:cursor-not-allowed enabled:hover:bg-opacity-90 enabled:hover:scale-105 uppercase"
-            >
-              CONTINUAR
-            </button>
+          <button
+            onClick={onContinue}
+            disabled={!selectedOption}
+            className="w-full bg-apoio text-complementar py-4 px-6 rounded-xl text-lg font-sen font-bold shadow-md transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-complementar focus:ring-apoio disabled:bg-gray-300 disabled:shadow-none disabled:cursor-not-allowed enabled:hover:bg-opacity-90 enabled:hover:scale-105 uppercase"
+          >
+            CONTINUAR
+          </button>
         </div>
       </div>
     </div>

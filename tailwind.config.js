@@ -15,12 +15,11 @@ export default {
         "info-dark": "#6B21A8",
       },
       fontFamily: {
-        playfair: ["'Playfair Display'", "serif"],
+        docade: ["'Docade'", "sans-serif"],
         sen: ["'Sen'", "sans-serif"],
-        ebGaramond: ["'EB Garamond'", "serif"],
+        arboria: ["'Arboria'", "sans-serif"],
       },
     },
   },
   plugins: [],
 }
-

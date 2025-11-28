@@ -65,7 +65,7 @@ const FinalResultsPage: React.FC<FinalResultsPageProps> = ({ onContinue }) => {
         </header>
 
         <section className="mb-12">
-            <h1 className="font-playfair text-4xl font-bold mb-4">¿Por qué Dressfy?</h1>
+            <h1 className="font-docade text-4xl font-bold mb-4">¿Por qué Dressfy?</h1>
             <p className="text-gray-700 mb-4">
                 Adquirir un plan de <strong>Dressfy</strong> es más que solo mejorar tu apariencia: se trata de invertir en confianza y en ti misma. Obtendrás acceso a un análisis de belleza personalizado, recomendaciones de productos de expertos y un plan diario adaptado a ti. Cada día será una <strong>nueva oportunidad para brillar</strong>.
             </p>
@@ -81,7 +81,7 @@ const FinalResultsPage: React.FC<FinalResultsPageProps> = ({ onContinue }) => {
         </section>
 
         <section className="mb-12">
-            <h2 className="font-playfair text-3xl sm:text-4xl font-bold mb-6">
+            <h2 className="font-docade text-3xl sm:text-4xl font-bold mb-6">
                 "Personas como tú lograron grandes resultados usando Dressfy"
             </h2>
             <div className="bg-white rounded-2xl shadow-lg p-2">
@@ -94,7 +94,7 @@ const FinalResultsPage: React.FC<FinalResultsPageProps> = ({ onContinue }) => {
         </section>
 
         <section className="mb-12 text-left">
-            <h2 className="font-playfair text-3xl font-bold mb-6 text-center">Con Dressfy lograrás:</h2>
+            <h2 className="font-docade text-3xl font-bold mb-6 text-center">Con Dressfy lograrás:</h2>
             <div className="space-y-4">
                 {benefits.map((benefit, index) => (
                     <div key={index} className="flex items-center">
@@ -113,7 +113,7 @@ const FinalResultsPage: React.FC<FinalResultsPageProps> = ({ onContinue }) => {
 
         {/* Reviews Custom Section Implementation */}
         <section className="text-left bg-[#f8f9fa] p-5 rounded-xl -mx-4 sm:mx-0">
-            <h2 className="font-playfair text-3xl font-bold mb-6 text-center text-black">A la Gente le Encanta Nuestro Plan</h2>
+            <h2 className="font-docade text-3xl font-bold mb-6 text-center text-black">A la Gente le Encanta Nuestro Plan</h2>
             
             <ReviewCard 
                 initials="LM" 

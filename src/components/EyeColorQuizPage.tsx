@@ -40,8 +40,8 @@ const EyeColorQuizPage: React.FC<EyeColorQuizPageProps> = ({ onBack, onContinue 
           <button onClick={onBack} className="text-3xl p-2 -ml-2 hover:opacity-75 transition-opacity" aria-label="Voltar">
             &lt;
           </button>
-          <img 
-            src="/assets/logo-dressfy.webp" 
+          <img
+            src="/assets/logo-dressfy.webp"
             alt="Dressfy Logo"
             className="h-6"
           />
@@ -52,7 +52,7 @@ const EyeColorQuizPage: React.FC<EyeColorQuizPageProps> = ({ onBack, onContinue 
 
         {/* Main Content */}
         <div className="text-left">
-          <h1 className="text-4xl font-playfair font-bold mb-8">
+          <h1 className="text-4xl font-docade font-bold mb-8">
             ¿De qué color son tus ojos?
           </h1>
 
@@ -63,11 +63,10 @@ const EyeColorQuizPage: React.FC<EyeColorQuizPageProps> = ({ onBack, onContinue 
               return (
                 <button
                   key={name}
-                  className={`w-full flex items-center text-left p-4 border rounded-xl text-lg font-sen transition-all duration-300 transform focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-complementar focus:ring-principal ${
-                    isSelected
-                      ? 'bg-principal text-complementar border-principal scale-105 shadow-md'
-                      : 'bg-complementar border-secundaria text-apoio hover:border-principal'
-                  }`}
+                  className={`w-full flex items-center text-left p-4 border rounded-xl text-lg font-sen transition-all duration-300 transform focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-complementar focus:ring-principal ${isSelected
+                      ? 'bg-gray-50 border-apoio border-2 text-apoio font-bold shadow-md scale-[1.02]'
+                      : 'bg-white border-gray-200 text-gray-700 hover:border-gray-300'
+                    }`}
                   onClick={() => handleColorSelection(name)}
                 >
                   <span className="w-6 h-6 rounded-md mr-4" style={{ backgroundColor: color }}></span>
@@ -80,27 +79,27 @@ const EyeColorQuizPage: React.FC<EyeColorQuizPageProps> = ({ onBack, onContinue 
 
         {/* "Sabías?" Box (in main flow) */}
         <div ref={infoBoxRef} className={`transition-all duration-500 ease-in-out mt-8 ${selectedColor ? 'opacity-100 max-h-40' : 'opacity-0 max-h-0'}`} style={{ overflow: 'hidden' }}>
-            <div className="bg-gray-100 p-4 rounded-lg text-left">
-              <p className="font-bold font-sen text-apoio mb-1">
-                <span role="img" aria-label="emoji pensativo">😌</span> ¿Sabías?
-              </p>
-              <p className="text-sm text-gray-700">
-                El color de tus ojos es un indicador importante para determinar tu paleta de colores ideal.
-              </p>
-            </div>
+          <div className="bg-gray-100 p-4 rounded-lg text-left">
+            <p className="font-bold font-sen text-apoio mb-1">
+              <span role="img" aria-label="emoji pensativo">😌</span> ¿Sabías?
+            </p>
+            <p className="text-sm text-gray-700">
+              El color de tus ojos es un indicador importante para determinar tu paleta de colores ideal.
+            </p>
+          </div>
         </div>
       </div>
 
       {/* Floating Footer for the button only */}
       <div className="fixed bottom-0 left-0 right-0 bg-complementar p-4 border-t border-secundaria">
-          <div className="max-w-sm mx-auto">
-            <button 
-              onClick={onContinue}
-              disabled={!selectedColor}
-              className="w-full bg-apoio text-complementar py-4 px-6 rounded-xl text-lg font-sen font-bold shadow-md transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-complementar focus:ring-apoio disabled:bg-gray-300 disabled:shadow-none disabled:cursor-not-allowed enabled:hover:bg-opacity-90 enabled:hover:scale-105">
-              CONTINUAR
-            </button>
-          </div>
+        <div className="max-w-sm mx-auto">
+          <button
+            onClick={onContinue}
+            disabled={!selectedColor}
+            className="w-full bg-apoio text-complementar py-4 px-6 rounded-xl text-lg font-sen font-bold shadow-md transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-complementar focus:ring-apoio disabled:bg-gray-300 disabled:shadow-none disabled:cursor-not-allowed enabled:hover:bg-opacity-90 enabled:hover:scale-105">
+            CONTINUAR
+          </button>
+        </div>
       </div>
     </div>
   );

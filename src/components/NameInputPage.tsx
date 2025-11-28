@@ -65,10 +65,10 @@ const NameInputPage: React.FC<NameInputPageProps> = ({ onBack, onContinue }) => 
 
         {/* Main Content */}
         <div className="text-left flex-grow">
-          <h1 className="text-4xl font-playfair font-bold mb-4">
+          <h1 className="text-4xl font-docade font-bold mb-4">
             Por favor, cuéntanos más sobre ti.
           </h1>
-          <h2 className="text-3xl font-playfair mb-8">
+          <h2 className="text-3xl font-docade mb-8">
             ¿Cuál es tu nombre?
           </h2>
 

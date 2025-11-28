@@ -34,10 +34,10 @@ const EmailInputPage: React.FC<EmailInputPageProps> = ({ onBack, onContinue }) =
 
         {/* Main Content */}
         <div className="text-left flex-grow">
-          <h1 className="text-4xl font-playfair font-bold">
+          <h1 className="text-4xl font-docade font-bold">
             Ingresa el correo electrónico para crear
           </h1>
-          <h2 className="text-4xl font-playfair font-bold italic text-gray-700 mb-8">
+          <h2 className="text-4xl font-docade font-bold italic text-gray-700 mb-8">
             tu cuenta de Dressfy
           </h2>
 

@@ -13,7 +13,7 @@ const ComfortableWithSexyQuizPage: React.FC<ComfortableWithSexyQuizPageProps> = 
   const handleSelection = (option: string) => {
     setSelectedOption(option);
     setTimeout(() => {
-        onContinue();
+      onContinue();
     }, 400); // Delay for user to see selection
   };
 
@@ -25,8 +25,8 @@ const ComfortableWithSexyQuizPage: React.FC<ComfortableWithSexyQuizPageProps> = 
           <button onClick={onBack} className="text-3xl p-2 -ml-2 hover:opacity-75 transition-opacity" aria-label="Voltar">
             &lt;
           </button>
-          <img 
-            src="/assets/logo-dressfy.webp" 
+          <img
+            src="/assets/logo-dressfy.webp"
             alt="Dressfy Logo"
             className="h-6"
           />
@@ -37,7 +37,7 @@ const ComfortableWithSexyQuizPage: React.FC<ComfortableWithSexyQuizPageProps> = 
 
         {/* Main Content */}
         <div className="text-left">
-          <h1 className="text-3xl font-playfair font-bold mb-4 leading-tight">
+          <h1 className="text-3xl font-docade font-bold mb-4 leading-tight">
             ¿Te sientes cómoda/o cuando los hombres encuentran tu apariencia sexy?
           </h1>
           <p className="text-lg text-gray-600 font-sen mb-8">
@@ -51,11 +51,10 @@ const ComfortableWithSexyQuizPage: React.FC<ComfortableWithSexyQuizPageProps> = 
               return (
                 <button
                   key={option}
-                  className={`w-full text-left p-4 border rounded-xl text-lg font-sen transition-all duration-300 transform focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-complementar focus:ring-principal ${
-                    isSelected
-                      ? 'bg-principal text-complementar border-principal scale-105 shadow-md'
-                      : 'bg-complementar border-secundaria text-apoio hover:border-principal'
-                  }`}
+                  className={`w-full text-left p-4 border rounded-xl text-lg font-sen transition-all duration-300 transform focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-complementar focus:ring-principal ${isSelected
+                      ? 'bg-gray-50 border-apoio border-2 text-apoio font-bold shadow-md scale-[1.02]'
+                      : 'bg-white border-gray-200 text-gray-700 hover:border-gray-300'
+                    }`}
                   onClick={() => handleSelection(option)}
                 >
                   {option}

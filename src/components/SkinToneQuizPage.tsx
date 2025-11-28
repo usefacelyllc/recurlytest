@@ -23,7 +23,7 @@ const SkinToneQuizPage: React.FC<SkinToneQuizPageProps> = ({ onBack, onContinue 
     setSelectedTone(tone);
     updateQuizData({ skinTone: tone });
     setTimeout(() => {
-        onContinue();
+      onContinue();
     }, 400); // Delay for user to see selection and then move on
   };
 
@@ -35,8 +35,8 @@ const SkinToneQuizPage: React.FC<SkinToneQuizPageProps> = ({ onBack, onContinue 
           <button onClick={onBack} className="text-3xl p-2 -ml-2 hover:opacity-75 transition-opacity" aria-label="Voltar">
             &lt;
           </button>
-          <img 
-            src="/assets/logo-dressfy.webp" 
+          <img
+            src="/assets/logo-dressfy.webp"
             alt="Dressfy Logo"
             className="h-6"
           />
@@ -47,7 +47,7 @@ const SkinToneQuizPage: React.FC<SkinToneQuizPageProps> = ({ onBack, onContinue 
 
         {/* Main Content */}
         <div className="text-left">
-          <h1 className="text-4xl font-playfair font-bold mb-8 leading-tight">
+          <h1 className="text-4xl font-docade font-bold mb-8 leading-tight">
             Selecciona el color más cercano a tu tono de piel
           </h1>
 
@@ -58,11 +58,10 @@ const SkinToneQuizPage: React.FC<SkinToneQuizPageProps> = ({ onBack, onContinue 
               return (
                 <button
                   key={name}
-                  className={`w-full flex items-center text-left p-4 border rounded-xl text-lg font-sen transition-all duration-300 transform focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-complementar focus:ring-principal ${
-                    isSelected
-                      ? 'bg-principal text-complementar border-principal scale-105 shadow-md'
-                      : 'bg-complementar border-secundaria text-apoio hover:border-principal'
-                  }`}
+                  className={`w-full flex items-center text-left p-4 border rounded-xl text-lg font-sen transition-all duration-300 transform focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-complementar focus:ring-principal ${isSelected
+                      ? 'bg-gray-50 border-apoio border-2 text-apoio font-bold shadow-md scale-[1.02]'
+                      : 'bg-white border-gray-200 text-gray-700 hover:border-gray-300'
+                    }`}
                   onClick={() => handleSelection(name)}
                 >
                   <span className="w-6 h-6 rounded-md mr-4 border border-gray-300" style={{ backgroundColor: color }}></span>

@@ -49,8 +49,8 @@ const FaceShapeQuizPage: React.FC<FaceShapeQuizPageProps> = ({ onBack, onContinu
           <button onClick={onBack} className="text-3xl p-2 -ml-2 hover:opacity-75 transition-opacity" aria-label="Voltar">
             &lt;
           </button>
-          <img 
-            src="/assets/logo-dressfy.webp" 
+          <img
+            src="/assets/logo-dressfy.webp"
             alt="Dressfy Logo"
             className="h-6"
           />
@@ -61,7 +61,7 @@ const FaceShapeQuizPage: React.FC<FaceShapeQuizPageProps> = ({ onBack, onContinu
 
         {/* Main Content */}
         <div className="text-left">
-          <h1 className="text-4xl font-playfair font-bold mb-8">
+          <h1 className="text-4xl font-docade font-bold mb-8">
             ¿Qué forma tiene tu rostro?
           </h1>
 
@@ -72,17 +72,16 @@ const FaceShapeQuizPage: React.FC<FaceShapeQuizPageProps> = ({ onBack, onContinu
               return (
                 <button
                   key={name}
-                  className={`w-full flex items-center text-left p-4 border rounded-xl text-lg font-sen transition-all duration-300 transform focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-complementar focus:ring-principal ${
-                    isSelected
-                      ? 'bg-principal text-complementar border-principal scale-105 shadow-md'
-                      : 'bg-complementar border-secundaria text-apoio hover:border-principal'
-                  }`}
+                  className={`w-full flex items-center text-left p-4 border rounded-xl text-lg font-sen transition-all duration-300 transform focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-complementar focus:ring-principal ${isSelected
+                      ? 'bg-gray-50 border-apoio border-2 text-apoio font-bold shadow-md scale-[1.02]'
+                      : 'bg-white border-gray-200 text-gray-700 hover:border-gray-300'
+                    }`}
                   onClick={() => handleSelection(name)}
                 >
-                  <img 
-                    src={imageUrl} 
-                    alt={name} 
-                    className="w-8 h-8 rounded-full mr-4" 
+                  <img
+                    src={imageUrl}
+                    alt={name}
+                    className="w-8 h-8 rounded-full mr-4"
                     onError={(e) => {
                       const img = e.target as HTMLImageElement;
                       const externalUrl = getExternalImageUrl(imageUrl);
@@ -91,7 +90,7 @@ const FaceShapeQuizPage: React.FC<FaceShapeQuizPageProps> = ({ onBack, onContinu
                       } else {
                         img.style.display = 'none';
                       }
-                    }} 
+                    }}
                   />
                   {name}
                 </button>
@@ -102,33 +101,33 @@ const FaceShapeQuizPage: React.FC<FaceShapeQuizPageProps> = ({ onBack, onContinu
           {/* Helper Text and Info Boxes */}
           <div className="mt-6 space-y-4" ref={infoRef}>
             {shapes.map(({ name, description }) => (
-               <div key={name} className={`transition-opacity duration-300 ease-in-out ${selectedShape === name ? 'opacity-100' : 'opacity-0 max-h-0'}`} style={{ overflow: 'hidden' }}>
-                    <p className="text-sm text-gray-600">
-                        {description}
-                    </p>
-                    <div className="bg-info-bg p-4 rounded-lg text-left mt-2">
-                      <p className="font-bold font-sen text-info-dark mb-1">
-                        <span role="img" aria-label="mujer levantando la mano">🙋‍♀️</span> Un consejo para rostros {name.toLowerCase()}
-                      </p>
-                      <p className="text-sm text-info-dark/80">
-                        {infoBoxContent[name]}
-                      </p>
-                    </div>
+              <div key={name} className={`transition-opacity duration-300 ease-in-out ${selectedShape === name ? 'opacity-100' : 'opacity-0 max-h-0'}`} style={{ overflow: 'hidden' }}>
+                <p className="text-sm text-gray-600">
+                  {description}
+                </p>
+                <div className="bg-info-bg p-4 rounded-lg text-left mt-2">
+                  <p className="font-bold font-sen text-info-dark mb-1">
+                    <span role="img" aria-label="mujer levantando la mano">🙋‍♀️</span> Un consejo para rostros {name.toLowerCase()}
+                  </p>
+                  <p className="text-sm text-info-dark/80">
+                    {infoBoxContent[name]}
+                  </p>
                 </div>
+              </div>
             ))}
           </div>
         </div>
       </div>
-      
+
       {/* Floating Footer */}
       <div className="fixed bottom-0 left-0 right-0 bg-complementar p-4 border-t border-secundaria">
         <div className="max-w-sm mx-auto">
-            <button 
-              onClick={onContinue}
-              disabled={!selectedShape}
-              className="w-full bg-apoio text-complementar py-4 px-6 rounded-xl text-lg font-sen font-bold shadow-md transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-complementar focus:ring-apoio disabled:bg-gray-300 disabled:shadow-none disabled:cursor-not-allowed enabled:hover:bg-opacity-90 enabled:hover:scale-105">
-              CONTINUAR
-            </button>
+          <button
+            onClick={onContinue}
+            disabled={!selectedShape}
+            className="w-full bg-apoio text-complementar py-4 px-6 rounded-xl text-lg font-sen font-bold shadow-md transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-complementar focus:ring-apoio disabled:bg-gray-300 disabled:shadow-none disabled:cursor-not-allowed enabled:hover:bg-opacity-90 enabled:hover:scale-105">
+            CONTINUAR
+          </button>
         </div>
       </div>
     </div>

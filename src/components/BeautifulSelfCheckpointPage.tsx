@@ -16,7 +16,7 @@ const BeautifulSelfCheckpointPage: React.FC<BeautifulSelfCheckpointPageProps> = 
 
       {/* Content */}
       <div className="relative z-10 p-6 pb-12 text-left max-w-sm mx-auto w-full">
-        <h1 className="text-3xl sm:text-4xl font-playfair font-bold mb-4 leading-tight">
+        <h1 className="text-3xl sm:text-4xl font-docade font-bold mb-4 leading-tight">
           Estás en camino hacia tu yo <span className="italic">más hermoso</span>.
         </h1>
         

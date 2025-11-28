@@ -734,7 +734,7 @@ const CheckoutPage: React.FC<CheckoutPageProps> = ({ onBack, selectedPrice, onSu
         
         <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
             <div className="mb-6 text-center">
-                <h2 className="text-2xl font-playfair font-bold mb-1">Finalizar Pedido</h2>
+                <h2 className="text-2xl font-docade font-bold mb-1">Finalizar Pedido</h2>
                 <p className="text-gray-500 text-sm">
                     Total a pagar: <span className="font-bold text-apoio text-lg">{selectedPrice || '$0.00'}</span>
                 </p>

@@ -43,7 +43,7 @@ const PersonalizeExperiencePage: React.FC<PersonalizeExperiencePageProps> = ({ o
           
           {/* Text Content - Melhor espaçamento */}
           <div className="flex-shrink-0 text-left mb-6">
-            <h1 className="text-2xl sm:text-3xl font-playfair font-bold mb-3 leading-tight text-gray-900">
+            <h1 className="text-2xl sm:text-3xl font-docade font-bold mb-3 leading-tight text-gray-900">
               Vamos a personalizar tu experiencia perfectamente
             </h1>
             <p className="text-sm sm:text-base text-gray-700 font-sen leading-relaxed">

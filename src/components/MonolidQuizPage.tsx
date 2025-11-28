@@ -16,7 +16,7 @@ const MonolidIcon = ({ selected }: { selected: boolean }) => (
     viewBox="0 0 36 36.000001"
     preserveAspectRatio="xMidYMid meet"
     version="1.0"
-    className={`w-12 h-12 mr-4 flex-shrink-0 transition-all duration-300 ${selected ? 'brightness-0 invert' : ''}`}
+    className="w-12 h-12 mr-4 flex-shrink-0 transition-all duration-300"
   >
     <defs>
       <filter x="0%" y="0%" width="100%" height="100%" id="22b2a9d178">
@@ -55,7 +55,7 @@ const DoubleEyelidIcon = ({ selected }: { selected: boolean }) => (
     viewBox="0 0 36 36.000001"
     preserveAspectRatio="xMidYMid meet"
     version="1.0"
-    className={`w-12 h-12 mr-4 flex-shrink-0 transition-all duration-300 ${selected ? 'brightness-0 invert' : ''}`}
+    className="w-12 h-12 mr-4 flex-shrink-0 transition-all duration-300"
   >
     <defs>
       <filter x="0%" y="0%" width="100%" height="100%" id="fbedf23171">
@@ -105,8 +105,8 @@ const MonolidQuizPage: React.FC<MonolidQuizPageProps> = ({ onBack, onContinue })
           <button onClick={onBack} className="text-3xl p-2 -ml-2 hover:opacity-75 transition-opacity" aria-label="Voltar">
             &lt;
           </button>
-          <img 
-            src="/assets/logo-dressfy.webp" 
+          <img
+            src="/assets/logo-dressfy.webp"
             alt="Dressfy Logo"
             className="h-6"
           />
@@ -117,7 +117,7 @@ const MonolidQuizPage: React.FC<MonolidQuizPageProps> = ({ onBack, onContinue })
 
         {/* Main Content */}
         <div className="text-left">
-          <h1 className="text-4xl font-playfair font-bold mb-8">
+          <h1 className="text-4xl font-docade font-bold mb-8">
             ¿Tienes ojos con párpado monolido?
           </h1>
 
@@ -128,15 +128,14 @@ const MonolidQuizPage: React.FC<MonolidQuizPageProps> = ({ onBack, onContinue })
               return (
                 <button
                   key={option}
-                  className={`w-full flex items-center text-left p-4 border rounded-xl text-lg font-sen transition-all duration-300 transform focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-complementar focus:ring-principal ${
-                    isSelected
-                      ? 'bg-principal text-complementar border-principal scale-105 shadow-md'
-                      : 'bg-complementar border-secundaria text-apoio hover:border-principal'
-                  }`}
+                  className={`w-full flex items-center text-left p-4 border rounded-xl text-lg font-sen transition-all duration-300 transform focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-complementar focus:ring-principal ${isSelected
+                      ? 'bg-gray-50 border-apoio border-2 text-apoio font-bold shadow-md scale-[1.02]'
+                      : 'bg-white border-gray-200 text-gray-700 hover:border-gray-300'
+                    }`}
                   onClick={() => handleSelection(option)}
                 >
-                  {option === 'Sí' 
-                    ? <MonolidIcon selected={isSelected} /> 
+                  {option === 'Sí'
+                    ? <MonolidIcon selected={isSelected} />
                     : <DoubleEyelidIcon selected={isSelected} />
                   }
                   {option}
@@ -147,29 +146,29 @@ const MonolidQuizPage: React.FC<MonolidQuizPageProps> = ({ onBack, onContinue })
 
           {/* Helper Text */}
           <div className="mt-6 text-sm text-gray-600 relative min-h-[8rem]">
-              <div className={`absolute top-0 left-0 transition-opacity duration-300 ease-in-out ${selectedOption === 'Sí' ? 'opacity-100' : 'opacity-0'}`}>
-                  <p>
-                      <strong>Sí, considero que tengo:</strong> Superficie del párpado plana, sin pliegues visibles, comúnmente encontrada en personas de ascendencia asiática.
-                  </p>
-              </div>
-              <div className={`absolute top-0 left-0 transition-opacity duration-300 ease-in-out ${selectedOption === 'No' ? 'opacity-100' : 'opacity-0'}`}>
-                  <p>
-                      <strong>No, considero que tengo:</strong> Pliegue definido en el párpado que crea un doblez sobre la línea de las pestañas.
-                  </p>
-              </div>
+            <div className={`absolute top-0 left-0 transition-opacity duration-300 ease-in-out ${selectedOption === 'Sí' ? 'opacity-100' : 'opacity-0'}`}>
+              <p>
+                <strong>Sí, considero que tengo:</strong> Superficie del párpado plana, sin pliegues visibles, comúnmente encontrada en personas de ascendencia asiática.
+              </p>
+            </div>
+            <div className={`absolute top-0 left-0 transition-opacity duration-300 ease-in-out ${selectedOption === 'No' ? 'opacity-100' : 'opacity-0'}`}>
+              <p>
+                <strong>No, considero que tengo:</strong> Pliegue definido en el párpado que crea un doblez sobre la línea de las pestañas.
+              </p>
+            </div>
           </div>
         </div>
       </div>
-      
+
       {/* Floating Footer */}
       <div className="fixed bottom-0 left-0 right-0 bg-complementar p-4 border-t border-secundaria">
-         <div className="max-w-sm mx-auto">
-            <button 
-              onClick={onContinue}
-              disabled={!selectedOption}
-              className="w-full bg-apoio text-complementar py-4 px-6 rounded-xl text-lg font-sen font-bold shadow-md transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-complementar focus:ring-apoio disabled:bg-gray-300 disabled:shadow-none disabled:cursor-not-allowed enabled:hover:bg-opacity-90 enabled:hover:scale-105">
-              CONTINUAR
-            </button>
+        <div className="max-w-sm mx-auto">
+          <button
+            onClick={onContinue}
+            disabled={!selectedOption}
+            className="w-full bg-apoio text-complementar py-4 px-6 rounded-xl text-lg font-sen font-bold shadow-md transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-complementar focus:ring-apoio disabled:bg-gray-300 disabled:shadow-none disabled:cursor-not-allowed enabled:hover:bg-opacity-90 enabled:hover:scale-105">
+            CONTINUAR
+          </button>
         </div>
       </div>
     </div>

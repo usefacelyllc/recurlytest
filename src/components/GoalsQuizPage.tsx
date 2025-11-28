@@ -10,7 +10,7 @@ interface GoalsQuizPageProps {
 const CheckedIcon = () => (
   <div className="w-6 h-6 rounded border border-gray-300 flex items-center justify-center bg-gray-100 flex-shrink-0">
     <svg className="w-4 h-4 text-apoio" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" />
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" />
     </svg>
   </div>
 );
@@ -43,8 +43,8 @@ const GoalsQuizPage: React.FC<GoalsQuizPageProps> = ({ onBack, onContinue }) => 
   };
 
   const handleContinue = () => {
-      updateQuizData({ goals: selectedGoals });
-      onContinue();
+    updateQuizData({ goals: selectedGoals });
+    onContinue();
   };
 
   return (
@@ -55,8 +55,8 @@ const GoalsQuizPage: React.FC<GoalsQuizPageProps> = ({ onBack, onContinue }) => 
           <button onClick={onBack} className="text-3xl p-2 -ml-2 hover:opacity-75 transition-opacity" aria-label="Voltar">
             &lt;
           </button>
-          <img 
-            src="/assets/logo-dressfy.webp" 
+          <img
+            src="/assets/logo-dressfy.webp"
             alt="Dressfy Logo"
             className="h-6"
           />
@@ -68,7 +68,7 @@ const GoalsQuizPage: React.FC<GoalsQuizPageProps> = ({ onBack, onContinue }) => 
 
         {/* Main Content */}
         <div className="text-left">
-          <h1 className="text-3xl font-playfair font-bold mb-2 leading-tight">
+          <h1 className="text-3xl font-docade font-bold mb-2 leading-tight">
             Espero que Dressfy me ayude a aumentar mi...
           </h1>
           <p className="text-lg text-gray-600 font-sen mb-8">
@@ -81,16 +81,15 @@ const GoalsQuizPage: React.FC<GoalsQuizPageProps> = ({ onBack, onContinue }) => 
               return (
                 <div
                   key={option}
-                  className={`w-full flex items-center justify-between p-4 border rounded-xl text-lg font-sen transition-all duration-300 cursor-pointer bg-white ${
-                    isSelected
-                      ? 'border-gray-400 shadow-sm'
-                      : 'border-gray-200 hover:border-gray-300'
-                  }`}
+                  className={`w-full flex items-center justify-between p-4 border rounded-xl text-lg font-sen transition-all duration-300 cursor-pointer ${isSelected
+                      ? 'bg-gray-50 border-apoio border-2 shadow-md'
+                      : 'bg-white border-gray-200 hover:border-gray-300'
+                    }`}
                   onClick={() => handleSelection(option)}
                 >
                   <span className="font-bold text-gray-800 flex-1 text-left">{option}</span>
                   <div className="flex-shrink-0">
-                     {isSelected ? <CheckedIcon /> : <UncheckedIcon />}
+                    {isSelected ? <CheckedIcon /> : <UncheckedIcon />}
                   </div>
                 </div>
               );
@@ -102,13 +101,13 @@ const GoalsQuizPage: React.FC<GoalsQuizPageProps> = ({ onBack, onContinue }) => 
       {/* Sticky Footer Button */}
       <div className="fixed bottom-0 left-0 right-0 bg-complementar p-4 border-t border-secundaria">
         <div className="max-w-sm mx-auto">
-            <button 
-              onClick={handleContinue}
-              disabled={selectedGoals.length === 0}
-              className="w-full bg-apoio text-complementar py-4 px-6 rounded-xl text-lg font-sen font-bold shadow-md transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-complementar focus:ring-apoio disabled:bg-gray-300 disabled:shadow-none disabled:cursor-not-allowed enabled:hover:bg-opacity-90 enabled:hover:scale-105 uppercase"
-            >
-              CONTINUAR
-            </button>
+          <button
+            onClick={handleContinue}
+            disabled={selectedGoals.length === 0}
+            className="w-full bg-apoio text-complementar py-4 px-6 rounded-xl text-lg font-sen font-bold shadow-md transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-complementar focus:ring-apoio disabled:bg-gray-300 disabled:shadow-none disabled:cursor-not-allowed enabled:hover:bg-opacity-90 enabled:hover:scale-105 uppercase"
+          >
+            CONTINUAR
+          </button>
         </div>
       </div>
     </div>

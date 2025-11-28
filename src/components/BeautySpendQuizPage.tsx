@@ -13,7 +13,7 @@ const BeautySpendQuizPage: React.FC<BeautySpendQuizPageProps> = ({ onBack, onCon
   const handleSelection = (option: string) => {
     setSelectedOption(option);
     setTimeout(() => {
-        onContinue();
+      onContinue();
     }, 400); // Delay for user to see selection
   };
 
@@ -25,8 +25,8 @@ const BeautySpendQuizPage: React.FC<BeautySpendQuizPageProps> = ({ onBack, onCon
           <button onClick={onBack} className="text-3xl p-2 -ml-2 hover:opacity-75 transition-opacity" aria-label="Voltar">
             &lt;
           </button>
-          <img 
-            src="/assets/logo-dressfy.webp" 
+          <img
+            src="/assets/logo-dressfy.webp"
             alt="Dressfy Logo"
             className="h-6"
           />
@@ -37,7 +37,7 @@ const BeautySpendQuizPage: React.FC<BeautySpendQuizPageProps> = ({ onBack, onCon
 
         {/* Main Content */}
         <div className="text-left">
-          <h1 className="text-4xl font-playfair font-bold mb-2 leading-tight">
+          <h1 className="text-4xl font-docade font-bold mb-2 leading-tight">
             ¿Cuánto sueles gastar en belleza por mes?
           </h1>
           <p className="text-lg text-gray-600 font-sen mb-8">
@@ -51,11 +51,10 @@ const BeautySpendQuizPage: React.FC<BeautySpendQuizPageProps> = ({ onBack, onCon
               return (
                 <button
                   key={option}
-                  className={`w-full text-left p-4 border rounded-xl text-lg font-sen transition-all duration-300 transform focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-complementar focus:ring-principal ${
-                    isSelected
-                      ? 'bg-principal text-complementar border-principal scale-105 shadow-md'
-                      : 'bg-complementar border-secundaria text-apoio hover:border-principal'
-                  }`}
+                  className={`w-full text-left p-4 border rounded-xl text-lg font-sen transition-all duration-300 transform focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-complementar focus:ring-principal ${isSelected
+                      ? 'bg-gray-50 border-apoio border-2 text-apoio font-bold shadow-md scale-[1.02]'
+                      : 'bg-white border-gray-200 text-gray-700 hover:border-gray-300'
+                    }`}
                   onClick={() => handleSelection(option)}
                 >
                   {option}

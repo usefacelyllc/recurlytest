@@ -36,17 +36,17 @@ import UpsellPage from './components/UpsellPage';
 import ThankYouPage from './components/ThankYouPage';
 import { QuizProvider } from './context/QuizContext';
 
-type Page = 
-  | 'home' 
-  | 'ageQuiz' 
-  | 'eyeColorQuiz' 
-  | 'attractivenessQuiz' 
-  | 'reflectionQuiz' 
-  | 'skinToneQuiz' 
+type Page =
+  | 'home'
+  | 'ageQuiz'
+  | 'eyeColorQuiz'
+  | 'attractivenessQuiz'
+  | 'reflectionQuiz'
+  | 'skinToneQuiz'
   | 'faceShapeQuiz'
-  | 'monolidQuiz' 
-  | 'sensitiveSkinQuiz' 
-  | 'skinConcernsQuiz' 
+  | 'monolidQuiz'
+  | 'sensitiveSkinQuiz'
+  | 'skinConcernsQuiz'
   | 'checkpoint'
   | 'sexyQuiz'
   | 'possibilityCheckpoint'
@@ -99,7 +99,7 @@ const App: React.FC = () => {
         return <SensitiveSkinQuizPage onBack={() => goToPage('monolidQuiz')} onContinue={() => goToPage('skinConcernsQuiz')} />;
       case 'skinConcernsQuiz':
         return <SkinConcernsQuizPage onBack={() => goToPage('sensitiveSkinQuiz')} onContinue={() => goToPage('checkpoint')} />;
-      
+
       // Checkpoint 1
       case 'checkpoint':
         return <CheckpointPage onContinue={() => goToPage('sexyQuiz')} />;
@@ -121,7 +121,7 @@ const App: React.FC = () => {
         return <FeelingsQuizPage onBack={() => goToPage('impressionQuiz')} onContinue={() => goToPage('comfortableWithSexyQuiz')} />;
       case 'comfortableWithSexyQuiz':
         return <ComfortableWithSexyQuizPage onBack={() => goToPage('feelingsQuiz')} onContinue={() => goToPage('possibilityCheckpoint')} />;
-      
+
       // Moved Checkpoint 2
       case 'possibilityCheckpoint':
         return <PossibilityCheckpointPage onContinue={() => goToPage('faceShapeQuiz')} />;
@@ -130,21 +130,21 @@ const App: React.FC = () => {
         return <FaceShapeQuizPage onBack={() => goToPage('possibilityCheckpoint')} onContinue={() => goToPage('beautySpendQuiz')} />;
       case 'beautySpendQuiz':
         return <BeautySpendQuizPage onBack={() => goToPage('faceShapeQuiz')} onContinue={() => goToPage('personalizeExperience')} />;
-      
+
       // Personalization Step
       case 'personalizeExperience':
-        return <PersonalizeExperiencePage 
-                  onBack={() => goToPage('beautySpendQuiz')} 
-                  onContinue={() => goToPage('cameraAnalysis')} 
-                  onSkip={() => goToPage('resultsReady')}
-               />;
+        return <PersonalizeExperiencePage
+          onBack={() => goToPage('beautySpendQuiz')}
+          onContinue={() => goToPage('cameraAnalysis')}
+          onSkip={() => goToPage('resultsReady')}
+        />;
 
       // Camera Analysis
       case 'cameraAnalysis':
-        return <CameraAnalysisPage 
-                  onBack={() => goToPage('personalizeExperience')}
-                  onContinue={() => goToPage('resultsReady')}
-               />;
+        return <CameraAnalysisPage
+          onBack={() => goToPage('personalizeExperience')}
+          onContinue={() => goToPage('resultsReady')}
+        />;
 
       // Results Ready
       case 'resultsReady':
@@ -152,30 +152,30 @@ const App: React.FC = () => {
 
       // Makeup Skills
       case 'makeupSkillsQuiz':
-        return <MakeupSkillsQuizPage 
-                  onBack={() => goToPage('resultsReady')} 
-                  onContinue={() => goToPage('goalsQuiz')} 
-               />;
-      
+        return <MakeupSkillsQuizPage
+          onBack={() => goToPage('resultsReady')}
+          onContinue={() => goToPage('goalsQuiz')}
+        />;
+
       // Goals Quiz
       case 'goalsQuiz':
-        return <GoalsQuizPage 
-                  onBack={() => goToPage('makeupSkillsQuiz')} 
-                  onContinue={() => goToPage('happyGoalsQuiz')} 
-               />;
+        return <GoalsQuizPage
+          onBack={() => goToPage('makeupSkillsQuiz')}
+          onContinue={() => goToPage('happyGoalsQuiz')}
+        />;
 
       // Happy Goals Quiz
       case 'happyGoalsQuiz':
-        return <HappyGoalsQuizPage 
-                  onBack={() => goToPage('goalsQuiz')} 
-                  onContinue={() => goToPage('beautifulSelfCheckpoint')} 
-               />;
+        return <HappyGoalsQuizPage
+          onBack={() => goToPage('goalsQuiz')}
+          onContinue={() => goToPage('beautifulSelfCheckpoint')}
+        />;
 
       // Beautiful Self Checkpoint
       case 'beautifulSelfCheckpoint':
-        return <BeautifulSelfCheckpointPage 
-                  onContinue={() => goToPage('nameInput')} 
-               />;
+        return <BeautifulSelfCheckpointPage
+          onContinue={() => goToPage('nameInput')}
+        />;
 
       // New Post-Quiz Flow
       case 'nameInput':
@@ -196,31 +196,31 @@ const App: React.FC = () => {
         }} />;
 
       case 'checkout':
-        return <CheckoutPage 
-          onBack={() => goToPage('pricing')} 
-          selectedPrice={selectedPrice} 
+        return <CheckoutPage
+          onBack={() => goToPage('pricing')}
+          selectedPrice={selectedPrice}
           onSuccess={(code) => {
             setAccountCode(code); // Salva o accountCode para o upsell
             goToPage('upsell');
-          }} 
+          }}
         />;
-      
+
       // Upsell Page
       case 'upsell':
-        return <UpsellPage 
-           accountCode={accountCode || ''} // Passa o accountCode para o upsell one-click
-           onAccept={() => {
-             console.log('Upsell Accepted');
-             setAccountCode(null); // Limpa o accountCode
-             goToPage('thankYou');
-           }}
-           onSkip={() => {
-             console.log('Upsell Skipped');
-             setAccountCode(null); // Limpa o accountCode
-             goToPage('thankYou');
-           }}
+        return <UpsellPage
+          accountCode={accountCode || ''} // Passa o accountCode para o upsell one-click
+          onAccept={() => {
+            console.log('Upsell Accepted');
+            setAccountCode(null); // Limpa o accountCode
+            goToPage('thankYou');
+          }}
+          onSkip={() => {
+            console.log('Upsell Skipped');
+            setAccountCode(null); // Limpa o accountCode
+            goToPage('thankYou');
+          }}
         />;
-      
+
       // Thank You Page
       case 'thankYou':
         return <ThankYouPage onHome={() => goToPage('home')} />;

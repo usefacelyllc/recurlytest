@@ -23,7 +23,7 @@ const MakefyQuizPage: React.FC<MakefyQuizPageProps> = ({ onContinue }) => {
 
         <div className="flex flex-col items-center flex-grow justify-center w-full">
             {/* Headline */}
-            <div className="font-ebGaramond text-3xl md:text-5xl font-extrabold mb-6 text-center w-full h-[80px] md:h-[120px] flex items-center justify-center">
+            <div className="font-docade text-3xl md:text-5xl font-extrabold mb-6 text-center w-full h-[80px] md:h-[120px] flex items-center justify-center">
                 <div className="relative h-[40px] md:h-[60px] w-full flex justify-center items-center">
                     <span className="phrase">Encuentra Tu Estilo Único</span>
                     <span className="phrase">Descubre Cuán Joven Lucirás</span>
